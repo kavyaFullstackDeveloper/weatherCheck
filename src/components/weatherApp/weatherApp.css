@@ -42,6 +42,8 @@
 }
 
 .weather-image{
+    height: 177px;
+    width: auto;
     margin-top: 29px;
     display: flex;
     justify-content: center;
