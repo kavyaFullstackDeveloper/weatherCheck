@@ -8,12 +8,11 @@ import drizzle from  '../assets/drizzle.png';
 import rain from  '../assets/rain.png';
 import  snow from  '../assets/snow.png';
 import wind from  '../assets/wind.png';
-
+import.meta.env.api_key;
 
 const WeatherApp = () => {
 
-    let api_key = "504985c5bbf69dba2284ebc2b32ac4c6";
-
+    
      const [wicon, setWicon] = useState(cloud);
 
     const search = async () => {
