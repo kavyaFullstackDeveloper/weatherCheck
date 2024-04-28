@@ -8,6 +8,8 @@ import drizzle from  '../assets/drizzle.png';
 import rain from  '../assets/rain.png';
 import  snow from  '../assets/snow.png';
 import wind from  '../assets/wind.png';
+import 'dotenv/config'
+require('dotenv').config()
 // import.meta.env.api_key;
 
 const WeatherApp = () => {
@@ -22,16 +24,7 @@ const WeatherApp = () => {
             return 0;
         }
 
-        /* let url = `https://api.openweathermap.org/data/2.5/weather?q=&units=metric&appid=${process.env.API_KEY}`; */
-        
-        
-       const url = new URL('https://api.openweathermap.org/data/2.5/weather');
-       url.search = new URLSearchParams({
-        q: city,
-      units: 'metric',
-       appid: import.meta.env.API_KEY
-      }).toString();
-
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.VITE_APP_API_KEY}`;
 
         let res = await fetch(url);
         let data = await res.json();
